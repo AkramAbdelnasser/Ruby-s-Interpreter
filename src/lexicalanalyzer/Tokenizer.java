@@ -135,8 +135,21 @@ public class Tokenizer {
                         List_of_tokens.get(i).setValue("==");
                         List_of_tokens.get(i).setType("EqualEqual");
                         List_of_tokens.remove(i + 1);
-                    }
+                    } else if (List_of_tokens.get(i + 1).getValue().equalsIgnoreCase("begin")) {
+                        int nextIndex = i + 1;
+                        String blockComment = "";
+                        while (!List_of_tokens.get(nextIndex).getValue().equals("=")) {
+                            blockComment = blockComment + List_of_tokens.get(nextIndex).getValue();
+                            List_of_tokens.remove(nextIndex);
+                        }
+                        List_of_tokens.remove(nextIndex);
+			List_of_tokens.remove(nextIndex);
+                        blockComment = blockComment.trim();
+                        List_of_tokens.get(i).setValue(blockComment);
+                        List_of_tokens.get(i).setType("blockComment");
+                    } 
                     break;
+
 
                 case "&":
                     if ("&".equals(List_of_tokens.get(i + 1).getValue())) {
