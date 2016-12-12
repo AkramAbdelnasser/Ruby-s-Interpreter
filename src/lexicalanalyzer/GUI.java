@@ -53,6 +53,7 @@ import javax.swing.text.DefaultEditorKit;
  */
 public class GUI extends javax.swing.JFrame {
 
+
     /**
      * Creates new form GUI
      */
@@ -62,6 +63,7 @@ public class GUI extends javax.swing.JFrame {
     ArrayList<Token> tokensList = new ArrayList<>();
     File path;
     File savePath;
+
     public GUI() {
         //this.setSize(1650, 1080);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -80,10 +82,17 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel1 = new JLabel();
         jLabel2 = new JLabel();
+        jLabel3 = new JLabel();
+        jPanel1 = new JPanel();
+        jScrollPane2 = new JScrollPane();
+        jTextArea2 = new JTextArea();
         jScrollPane1 = new JScrollPane();
         jTextArea1 = new JTextArea();
-        jScrollPane3 = new JScrollPane();
-        jLabel3 = new JLabel();
+        jButton1 = new JButton();
+        jButton2 = new JButton();
+        jButton3 = new JButton();
+        jButton4 = new JButton();
+        jButton5 = new JButton();
         jMenuBar1 = new JMenuBar();
         jMenu1 = new JMenu();
         jMenuItem1 = new JMenuItem();
@@ -113,13 +122,77 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setForeground(new Color(102, 51, 255));
         jLabel2.setText("Copyrights reserved to Faculty of Engineering in Alexandria University");
 
+        jLabel3.setFont(new Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setForeground(new Color(102, 51, 255));
+        jLabel3.setText("Source Code");
+
+        jScrollPane2.setHorizontalScrollBar(null);
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setColumns(20);
+        jTextArea2.setForeground(new Color(0, 102, 255));
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel3.setFont(new Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setForeground(new Color(153, 153, 255));
-        jLabel3.setText("Source Code");
+        GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 1283, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
+        );
+
+        jButton1.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\newFile.png")); // NOI18N
+        jButton1.setToolTipText("New");
+        jButton1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\run.gif")); // NOI18N
+        jButton2.setToolTipText("Run");
+        jButton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\save.jpg")); // NOI18N
+        jButton3.setToolTipText("Save");
+        jButton3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\saveAs.png")); // NOI18N
+        jButton4.setToolTipText("Save As");
+        jButton4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\Open.png")); // NOI18N
+        jButton5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
 
@@ -228,38 +301,48 @@ public class GUI extends javax.swing.JFrame {
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-            .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
-                .addGap(29, 29, 29))
-            .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                    .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(539, 539, 539)
-                        .addComponent(jLabel1))
-                    .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(504, 504, 504)
-                        .addComponent(jLabel2))
-                    .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(612, 612, 612)
-                        .addComponent(jLabel3)))
-                .addContainerGap(620, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(217, 217, 217)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(180, 180, 180)
+                                .addComponent(jLabel2))))
+                    .addComponent(jLabel3))
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(5, 5, 5)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2))
+                    .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
                 .addComponent(jLabel3)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -274,14 +357,14 @@ public class GUI extends javax.swing.JFrame {
         BufferedWriter fileOut = null;
         try {
             // TODO add your handling code here:
-            JFileChooser chooser = new JFileChooser();            
+            JFileChooser chooser = new JFileChooser();
             chooser.setCurrentDirectory(new java.io.File("."));
             if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 savePath = chooser.getSelectedFile();
             } else {
                 System.out.println("No Selection ");
             }
-            fileOut = new BufferedWriter(new FileWriter(savePath + ".txt")); 
+            fileOut = new BufferedWriter(new FileWriter(savePath + ".txt"));
             jTextArea1.write(fileOut);
         } catch (IOException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -297,16 +380,17 @@ public class GUI extends javax.swing.JFrame {
     private void jMenuItem9ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
         code.clear();
+        keywords = file.LoadKeywords(keywords); //Load Keywords
         String[] lines = jTextArea1.getText().split("\\n");
-            for (int i = 0; i < lines.length; i++) {
-                code.add(lines[i]);
-        if (!jTextArea1.getText().equals("")) {
-            jTextArea1.setEditable(false);
-            jTextArea1.setText("");
-            jLabel3.setText("Lexical Analysis");
-        }
-        
+        for (int i = 0; i < lines.length; i++) {
+            code.add(lines[i]);
+            if (!jTextArea1.getText().equals("")) {
+                jTextArea1.setEditable(false);
+                jTextArea1.setText("");
+                jLabel3.setText("Lexical Analysis");
             }
+
+        }
         PrintStream printStream = new PrintStream(new CustomOutputStream(jTextArea1));
         System.setOut(printStream);
         System.setErr(printStream);
@@ -315,6 +399,11 @@ public class GUI extends javax.swing.JFrame {
 
         for (Token tokensList1 : tokensList) {
             tokensList1.showPair();
+        }
+        int lineCounter = jTextArea1.getLineCount();
+        for (int j = 1; j < lineCounter; j++) {
+            String temp = "" + j;
+            jTextArea2.setText(jTextArea2.getText() + temp + "\n");
         }
 
     }//GEN-LAST:event_jMenuItem9ActionPerformed
@@ -337,6 +426,7 @@ public class GUI extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         jTextArea1.setText("");
+        jTextArea2.setText("");
         jTextArea1.setEditable(true);
         jLabel3.setText("Source Code");
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -345,26 +435,25 @@ public class GUI extends javax.swing.JFrame {
         FileReader fr = null;
         try {
             // TODO add your handling code here:
-            keywords = file.LoadKeywords(keywords); //Load Keywords
             JFileChooser chooser = new JFileChooser();
             chooser.setCurrentDirectory(new java.io.File("."));
 
             if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 path = chooser.getSelectedFile();
+                String textLine;
+                fr = new FileReader(path.toString());
+                BufferedReader reader = new BufferedReader(fr);
+                while ((textLine = reader.readLine()) != null) {
+                    jTextArea1.read(reader, "jTextArea1");
+                }
+
             } else {
                 System.out.println("No Selection ");
             }
-            String textLine;
-            fr = new FileReader(path.toString());
-            BufferedReader reader = new BufferedReader(fr);
-            while ((textLine = reader.readLine()) != null) {
-                // textLine = reader.readLine(); // remove this line
-                jTextArea1.read(reader, "jTextArea1");
-            }
-            
+
             //code = file.ReadFile("code.rb");//Load Code
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -377,12 +466,170 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        if(!path.toString().equals(null)){
         try (BufferedWriter fileOut = new BufferedWriter(new FileWriter(path))) {
             jTextArea1.write(fileOut);
         } catch (IOException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
+        }
+        else{
+            BufferedWriter fileOut = null;
+        try {
+            // TODO add your handling code here:
+            JFileChooser chooser = new JFileChooser();
+            chooser.setCurrentDirectory(new java.io.File("."));
+            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                savePath = chooser.getSelectedFile();
+            } else {
+                System.out.println("No Selection ");
+            }
+            fileOut = new BufferedWriter(new FileWriter(savePath + ".txt"));
+            jTextArea1.write(fileOut);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fileOut.close();
+            } catch (IOException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jButton2ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        code.clear();
+        keywords = file.LoadKeywords(keywords); //Load Keywords
+        String[] lines = jTextArea1.getText().split("\\n");
+        for (int i = 0; i < lines.length; i++) {
+            code.add(lines[i]);
+            if (!jTextArea1.getText().equals("")) {
+                jTextArea1.setEditable(false);
+                jTextArea1.setText("");
+                jLabel3.setText("Lexical Analysis");
+            }
+
+        }
+        PrintStream printStream = new PrintStream(new CustomOutputStream(jTextArea1));
+        System.setOut(printStream);
+        System.setErr(printStream);
+        Tokenizer tokenizer = new Tokenizer(keywords, code);
+        tokensList = tokenizer.tokenize();
+
+        for (Token tokensList1 : tokensList) {
+            tokensList1.showPair();
+        }
+        int lineCounter = jTextArea1.getLineCount();
+        for (int j = 1; j < lineCounter; j++) {
+            String temp = "" + j;
+            jTextArea2.setText(jTextArea2.getText() + temp + "\n");
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        BufferedWriter fileOut = null;
+        try {
+            // TODO add your handling code here:
+            JFileChooser chooser = new JFileChooser();
+            chooser.setCurrentDirectory(new java.io.File("."));
+            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                savePath = chooser.getSelectedFile();
+            } else {
+                System.out.println("No Selection ");
+            }
+            fileOut = new BufferedWriter(new FileWriter(savePath + ".txt"));
+            jTextArea1.write(fileOut);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fileOut.close();
+            } catch (IOException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        jTextArea1.setText("");
+        jTextArea2.setText("");
+        jTextArea1.setEditable(true);
+        jLabel3.setText("Source Code");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        if(!path.toString().equals(null)){
+        try (BufferedWriter fileOut = new BufferedWriter(new FileWriter(path))) {
+            jTextArea1.write(fileOut);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        else{
+            BufferedWriter fileOut = null;
+        try {
+            // TODO add your handling code here:
+            JFileChooser chooser = new JFileChooser();
+            chooser.setCurrentDirectory(new java.io.File("."));
+            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                savePath = chooser.getSelectedFile();
+            } else {
+                System.out.println("No Selection ");
+            }
+            fileOut = new BufferedWriter(new FileWriter(savePath + ".txt"));
+            jTextArea1.write(fileOut);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fileOut.close();
+            } catch (IOException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        FileReader fr = null;
+        try {
+            // TODO add your handling code here:
+            JFileChooser chooser = new JFileChooser();
+            chooser.setCurrentDirectory(new java.io.File("."));
+
+            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                path = chooser.getSelectedFile();
+                String textLine;
+                fr = new FileReader(path.toString());
+                BufferedReader reader = new BufferedReader(fr);
+                while ((textLine = reader.readLine()) != null) {
+                    jTextArea1.read(reader, "jTextArea1");
+                }
+
+            } else {
+                System.out.println("No Selection ");
+            }
+
+            //code = file.ReadFile("code.rb");//Load Code
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -415,11 +662,17 @@ public class GUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public JButton jButton1;
+    public JButton jButton2;
+    public JButton jButton3;
+    public JButton jButton4;
+    public JButton jButton5;
     public JLabel jLabel1;
     public JLabel jLabel2;
     public JLabel jLabel3;
@@ -438,9 +691,11 @@ public class GUI extends javax.swing.JFrame {
     public JMenuItem jMenuItem7;
     public JMenuItem jMenuItem8;
     public JMenuItem jMenuItem9;
+    public JPanel jPanel1;
     public JScrollPane jScrollPane1;
-    public JScrollPane jScrollPane3;
+    public JScrollPane jScrollPane2;
     public JPopupMenu.Separator jSeparator1;
     public JTextArea jTextArea1;
+    public JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }
