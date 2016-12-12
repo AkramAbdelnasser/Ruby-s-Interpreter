@@ -36,8 +36,10 @@ public class LexicalAnalyzer {
          Tokenizer tokenizer = new Tokenizer(keywords,code);
          tokensList=tokenizer.tokenize();
         
-        for (Token tokensList1 : tokensList) {
+        if(!tokenizer.isErrorflag()){
+         for (Token tokensList1 : tokensList) {
             tokensList1.showPair();
+        }
         }
 //         Scanner s = new Scanner(System.in);      
 //         String sentence = s.nextLine();
