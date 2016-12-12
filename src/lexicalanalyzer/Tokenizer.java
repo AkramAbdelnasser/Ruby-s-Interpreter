@@ -39,7 +39,7 @@ public class Tokenizer {
                 } else if (checkNum(nextToken)) {
                     token = new Token(nextToken, "Number", line_number);
                     List_of_tokens.add(token);
-                } else {
+                } else {                    
                     token = new Token(nextToken, "UNKNOWN", line_number);
                     List_of_tokens.add(token);
                 }
@@ -57,37 +57,37 @@ public class Tokenizer {
             String temp = List_of_tokens.get(i).getValue();
             int index = 0;
             switch (temp) {
-                case "{":
-                    if (flagbrace == false) {
-                        int it = i;
-                        int countopen = 0;
-                        int countclosed = 0;
-                        while (it < List_of_tokens.size()) {
-                            if (List_of_tokens.get(it).getValue().equals("{")) {
-                                countopen++;
-                            } else if (List_of_tokens.get(it).getValue().equals("}")) {
-                                countclosed++;
-                                index = it;
-                            }
-                            it++;
-                        }
-                        if (countopen == countclosed) {
-                            break;
-                        } else if (countopen > countclosed) {
-                            System.out.println("Syntax Error , unclosed brace in line "+List_of_tokens.get(i).getLine_number());
-                            System.exit(0);
-//                            int error = countopen - countclosed;
-//                            String q = List_of_tokens.get(i).getType();
-//                            List_of_tokens.get(i).setType(q + " ,Syntax error unclosed brace in line " + List_of_tokens.get(i).getLine_number());
-                        } else {
-                              System.out.println("Syntax Error , unclosed brace in line "+List_of_tokens.get(i).getLine_number());
-                              System.exit(0);
-//                            String q = List_of_tokens.get(index).getType();
-//                            List_of_tokens.get(index).setType(q + " ,Syntax error mislocated brace in line " + List_of_tokens.get(index).getLine_number());
-                        }
-                        flagbrace = true;
-                    }
-                    break;
+//                case "{":
+//                    if (flagbrace == false) {
+//                        int it = i;
+//                        int countopen = 0;
+//                        int countclosed = 0;
+//                        while (it < List_of_tokens.size()) {
+//                            if (List_of_tokens.get(it).getValue().equals("{")) {
+//                                countopen++;
+//                            } else if (List_of_tokens.get(it).getValue().equals("}")) {
+//                                countclosed++;
+//                                index = it;
+//                            }
+//                            it++;
+//                        }
+//                        if (countopen == countclosed) {
+//                            break;
+//                        } else if (countopen > countclosed) {
+//                            System.out.println("Syntax Error , unclosed brace in line "+List_of_tokens.get(i).getLine_number());
+//                            System.exit(0);
+////                            int error = countopen - countclosed;
+////                            String q = List_of_tokens.get(i).getType();
+////                            List_of_tokens.get(i).setType(q + " ,Syntax error unclosed brace in line " + List_of_tokens.get(i).getLine_number());
+//                        } else {
+//                              System.out.println("Syntax Error , unclosed brace in line "+List_of_tokens.get(i).getLine_number());
+//                              System.exit(0);
+////                            String q = List_of_tokens.get(index).getType();
+////                            List_of_tokens.get(index).setType(q + " ,Syntax error mislocated brace in line " + List_of_tokens.get(index).getLine_number());
+//                        }
+//                        flagbrace = true;
+//                    }
+//                    break;
                 case "+":
                     if ("+".equals(List_of_tokens.get(i + 1).getValue())) {
                         List_of_tokens.get(i).setValue("++");
@@ -208,7 +208,7 @@ public class Tokenizer {
                              else
                              {
                                  the_string=the_string+List_of_tokens.get(j).getValue();
-                                List_of_tokens.remove(j);
+                                 List_of_tokens.remove(j);
                              }
                         }
                         List_of_tokens.get(i).setValue("\""+the_string);
@@ -269,6 +269,11 @@ public class Tokenizer {
                         List_of_tokens.get(i).setType("String");
                     }
                     break;
+            }
+            if(List_of_tokens.get(i).getType().equals("UNKNOWN"))
+            {
+                 System.out.println("Unkown identifier in line "+List_of_tokens.get(i).getLine_number());
+                         System.exit(0);
             }
         }
 
