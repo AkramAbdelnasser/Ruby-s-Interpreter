@@ -41,6 +41,7 @@ yield keyword
 - minus
 * multiply
 / divide
+# comment
 ** exponent
 == equalsoperator
 != notequalsoperator
@@ -52,15 +53,15 @@ yield keyword
 ) rparan
 { lbrace
 } rbrace
+[ lbracket
+] rbracket
 . dot
 , comma
 ' squote
 " dquote
-  space
 & and
 | or
 && logicalAnd
 || logicalOr
 true literal
 false literal
-# comment

@@ -14,6 +14,12 @@ public class Tokenizer {
     private StringTokenizer st;
     private Token token;
     boolean flagbrace = false;
+    private boolean errorflag=false;
+
+    public boolean isErrorflag() {
+        return errorflag;
+    }
+    
 
     public Tokenizer(Map<String, String> keywords, ArrayList<String> code) {
         this.keywords = keywords;
@@ -24,7 +30,7 @@ public class Tokenizer {
     public ArrayList tokenize() {
         int line_number = 1;
         for (String line_of_code : code) {
-            st = new StringTokenizer(line_of_code, "[+-*=()&|\"'!,;<>.# ]", true);
+            st = new StringTokenizer(line_of_code, "[+-*=()&|\"'!,;<>.#{}[] ]", true);
             while (st.hasMoreTokens()) {
                 String nextToken = st.nextToken();
 //                if (" ".equals(nextToken)) {
@@ -164,7 +170,9 @@ public class Tokenizer {
                         if(nextIndex>=List_of_tokens.size() || !List_of_tokens.get(nextIndex+1).getValue().equalsIgnoreCase("end")  )
                         {
                             System.out.println("Missing the end of commnt block in line "+List_of_tokens.get(i).getLine_number());
-                            System.exit(0);
+                            errorflag=true;
+                            break;
+//                            System.exit(0);
                         }
                         List_of_tokens.remove(nextIndex);
 			List_of_tokens.remove(nextIndex);
@@ -175,7 +183,9 @@ public class Tokenizer {
                     else if(List_of_tokens.get(i + 1).getValue().equalsIgnoreCase("end"))
                     {
                         System.out.println("Ending a comment block without =begin in line  "+List_of_tokens.get(i).getLine_number());
-                            System.exit(0);
+                        errorflag=true;
+                            break;
+                            //System.exit(0);
                     }
                     break;
 
@@ -228,7 +238,9 @@ public class Tokenizer {
                         }
                         List_of_tokens.get(i).setValue("\""+the_string);
                          System.out.println("Syntax Error , missing quotations in line "+List_of_tokens.get(i).getLine_number());
-                         System.exit(0);
+                         errorflag=true;
+                            break;
+//                         System.exit(0);
 
 //                        List_of_tokens.get(i).setType("Syntax Error in Line " + List_of_tokens.get(i).getLine_number() + " ,missing quotations");
                     } else {
@@ -273,7 +285,9 @@ public class Tokenizer {
                         }
                         List_of_tokens.get(i).setValue("'"+the_string);
                          System.out.println("Syntax Error , missing quotations in line "+List_of_tokens.get(i).getLine_number());
-                         System.exit(0);
+                         errorflag=true;
+                            break;
+//                         System.exit(0);
                        // List_of_tokens.get(i).setType("Syntax Error in Line " + List_of_tokens.get(i).getLine_number() + " ,missing quotations");
                     } else {
 
@@ -288,8 +302,12 @@ public class Tokenizer {
             if(List_of_tokens.get(i).getType().equals("UNKNOWN"))
             {
                  System.out.println("Unkown identifier in line "+List_of_tokens.get(i).getLine_number());
-                         System.exit(0);
+                 errorflag=true;
+                            break;
+//                         System.exit(0);
             }
+            if (errorflag)
+                break;
         }
 
         return List_of_tokens;
