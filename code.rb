@@ -13,3 +13,6 @@ if (mayar==0)
 mayar'
 x = 1
 #coment aho hahaha hehehe hohohoho
+=begin
+dhjdhjd
+=end
