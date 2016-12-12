@@ -397,8 +397,10 @@ public class GUI extends javax.swing.JFrame {
         Tokenizer tokenizer = new Tokenizer(keywords, code);
         tokensList = tokenizer.tokenize();
 
-        for (Token tokensList1 : tokensList) {
+        if(!tokenizer.isErrorflag()){
+         for (Token tokensList1 : tokensList) {
             tokensList1.showPair();
+        }
         }
         int lineCounter = jTextArea1.getLineCount();
         for (int j = 1; j < lineCounter; j++) {
@@ -444,7 +446,7 @@ public class GUI extends javax.swing.JFrame {
                 fr = new FileReader(path.toString());
                 BufferedReader reader = new BufferedReader(fr);
                 while ((textLine = reader.readLine()) != null) {
-                    jTextArea1.read(reader, "jTextArea1");
+                    jTextArea1.setText(jTextArea1.getText()+textLine+"\n");
                 }
 
             } else {
@@ -474,27 +476,7 @@ public class GUI extends javax.swing.JFrame {
         }
         }
         else{
-            BufferedWriter fileOut = null;
-        try {
-            // TODO add your handling code here:
-            JFileChooser chooser = new JFileChooser();
-            chooser.setCurrentDirectory(new java.io.File("."));
-            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                savePath = chooser.getSelectedFile();
-            } else {
-                System.out.println("No Selection ");
-            }
-            fileOut = new BufferedWriter(new FileWriter(savePath + ".txt"));
-            jTextArea1.write(fileOut);
-        } catch (IOException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fileOut.close();
-            } catch (IOException ex) {
-                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+            jButton4ActionPerformed(evt);
         }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -518,8 +500,10 @@ public class GUI extends javax.swing.JFrame {
         Tokenizer tokenizer = new Tokenizer(keywords, code);
         tokensList = tokenizer.tokenize();
 
-        for (Token tokensList1 : tokensList) {
+        if(!tokenizer.isErrorflag()){
+         for (Token tokensList1 : tokensList) {
             tokensList1.showPair();
+        }
         }
         int lineCounter = jTextArea1.getLineCount();
         for (int j = 1; j < lineCounter; j++) {
@@ -572,27 +556,7 @@ public class GUI extends javax.swing.JFrame {
         }
         }
         else{
-            BufferedWriter fileOut = null;
-        try {
-            // TODO add your handling code here:
-            JFileChooser chooser = new JFileChooser();
-            chooser.setCurrentDirectory(new java.io.File("."));
-            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                savePath = chooser.getSelectedFile();
-            } else {
-                System.out.println("No Selection ");
-            }
-            fileOut = new BufferedWriter(new FileWriter(savePath + ".txt"));
-            jTextArea1.write(fileOut);
-        } catch (IOException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fileOut.close();
-            } catch (IOException ex) {
-                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+            jButton4ActionPerformed(evt);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -610,7 +574,8 @@ public class GUI extends javax.swing.JFrame {
                 fr = new FileReader(path.toString());
                 BufferedReader reader = new BufferedReader(fr);
                 while ((textLine = reader.readLine()) != null) {
-                    jTextArea1.read(reader, "jTextArea1");
+                   jTextArea1.setText(jTextArea1.getText()+textLine+"\n");
+                   // jTextArea1.read(reader, "jTextArea1");
                 }
 
             } else {
