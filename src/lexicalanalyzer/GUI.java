@@ -116,7 +116,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel1.setFont(new Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setForeground(new Color(0, 51, 255));
-        jLabel1.setText("Ruby Lexial Analyzer");
+        jLabel1.setText("Ruby Lexical Analyzer");
 
         jLabel2.setFont(new Font("Times New Roman", 0, 11)); // NOI18N
         jLabel2.setForeground(new Color(102, 51, 255));
@@ -155,7 +155,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\newFile.png")); // NOI18N
+        jButton1.setIcon(new ImageIcon(getClass().getResource("/lexicalanalyzer/newFile.png"))); // NOI18N
         jButton1.setToolTipText("New");
         jButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -163,7 +163,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\run.gif")); // NOI18N
+        jButton2.setIcon(new ImageIcon(getClass().getResource("/lexicalanalyzer/run.gif"))); // NOI18N
         jButton2.setToolTipText("Run");
         jButton2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -171,7 +171,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\save.jpg")); // NOI18N
+        jButton3.setIcon(new ImageIcon(getClass().getResource("/lexicalanalyzer/save.jpg"))); // NOI18N
         jButton3.setToolTipText("Save");
         jButton3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -179,7 +179,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\saveAs.png")); // NOI18N
+        jButton4.setIcon(new ImageIcon(getClass().getResource("/lexicalanalyzer/saveAs.png"))); // NOI18N
         jButton4.setToolTipText("Save As");
         jButton4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -187,7 +187,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setIcon(new ImageIcon("C:\\Users\\Mohamed El-Shaer\\Documents\\Handasa\\Term 9\\Programming Languages Translation\\Ruby-s-Interpreter\\Open.png")); // NOI18N
+        jButton5.setIcon(new ImageIcon(getClass().getResource("/lexicalanalyzer/Open.png"))); // NOI18N
         jButton5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 jButton5ActionPerformed(evt);

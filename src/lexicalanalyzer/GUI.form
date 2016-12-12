@@ -331,7 +331,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Mohamed El-Shaer\Documents\Handasa\Term 9\Programming Languages Translation\Ruby-s-Interpreter\newFile.png"/>
+          <Image iconType="3" name="/lexicalanalyzer/newFile.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="New"/>
       </Properties>
@@ -342,7 +342,7 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Mohamed El-Shaer\Documents\Handasa\Term 9\Programming Languages Translation\Ruby-s-Interpreter\run.gif"/>
+          <Image iconType="3" name="/lexicalanalyzer/run.gif"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Run"/>
       </Properties>
@@ -353,7 +353,7 @@
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Mohamed El-Shaer\Documents\Handasa\Term 9\Programming Languages Translation\Ruby-s-Interpreter\save.jpg"/>
+          <Image iconType="3" name="/lexicalanalyzer/save.jpg"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Save"/>
       </Properties>
@@ -364,7 +364,7 @@
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Mohamed El-Shaer\Documents\Handasa\Term 9\Programming Languages Translation\Ruby-s-Interpreter\saveAs.png"/>
+          <Image iconType="3" name="/lexicalanalyzer/saveAs.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Save As"/>
       </Properties>
@@ -375,7 +375,7 @@
     <Component class="javax.swing.JButton" name="jButton5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Mohamed El-Shaer\Documents\Handasa\Term 9\Programming Languages Translation\Ruby-s-Interpreter\Open.png"/>
+          <Image iconType="3" name="/lexicalanalyzer/Open.png"/>
         </Property>
       </Properties>
       <Events>
