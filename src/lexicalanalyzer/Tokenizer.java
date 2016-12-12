@@ -164,7 +164,6 @@ public class Tokenizer {
                     }
                     break;
 
-
                 case "&":
                     if ("&".equals(List_of_tokens.get(i + 1).getValue())) {
                         List_of_tokens.get(i).setValue("&&");

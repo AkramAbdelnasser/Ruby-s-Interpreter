@@ -1,4 +1,5 @@
 "mayar gamda gdn w brensa awyy f nafsaha
+5666ghh = 3
 {
 {
 
