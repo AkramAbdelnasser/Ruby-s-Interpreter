@@ -13,7 +13,6 @@ if (mayar==0)
 'tayeb aho mashy
 mayar'
 x = 1
-566gh=9
 #coment aho hahaha hehehe hohohoho
 =begin
 dhjdhjd

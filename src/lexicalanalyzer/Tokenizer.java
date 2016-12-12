@@ -140,6 +140,7 @@ public class Tokenizer {
                         List_of_tokens.get(i).setType("EqualEqual");
                         List_of_tokens.remove(i + 1);
                     } else if (List_of_tokens.get(i + 1).getValue().equalsIgnoreCase("begin")) {
+                        List_of_tokens.remove(i+1);
                         int nextIndex = i + 1;
                         String blockComment = "";
                         while (nextIndex<List_of_tokens.size() && !List_of_tokens.get(nextIndex).getValue().equals("=") ) {
