@@ -75,13 +75,13 @@ public class Tokenizer {
 //                            break;
 //                        } else if (countopen > countclosed) {
 //                            System.out.println("Syntax Error , unclosed brace in line "+List_of_tokens.get(i).getLine_number());
-//                            System.exit(0);
+//                            //System.exit(0);
 ////                            int error = countopen - countclosed;
 ////                            String q = List_of_tokens.get(i).getType();
 ////                            List_of_tokens.get(i).setType(q + " ,Syntax error unclosed brace in line " + List_of_tokens.get(i).getLine_number());
 //                        } else {
 //                              System.out.println("Syntax Error , unclosed brace in line "+List_of_tokens.get(i).getLine_number());
-//                              System.exit(0);
+//                              //System.exit(0);
 ////                            String q = List_of_tokens.get(index).getType();
 ////                            List_of_tokens.get(index).setType(q + " ,Syntax error mislocated brace in line " + List_of_tokens.get(index).getLine_number());
 //                        }
@@ -150,7 +150,7 @@ public class Tokenizer {
                         if(nextIndex>=List_of_tokens.size() || !List_of_tokens.get(nextIndex+1).getValue().equalsIgnoreCase("end")  )
                         {
                             System.out.println("Missing the end of commnt block in line "+List_of_tokens.get(i).getLine_number());
-                            System.exit(0);
+                            //System.exit(0);
                         }
                         List_of_tokens.remove(nextIndex);
 			List_of_tokens.remove(nextIndex);
@@ -161,7 +161,7 @@ public class Tokenizer {
                     else if(List_of_tokens.get(i + 1).getValue().equalsIgnoreCase("end"))
                     {
                         System.out.println("Ending a comment block without =begin in line  "+List_of_tokens.get(i).getLine_number());
-                            System.exit(0);
+                            //System.exit(0);
                     }
                     break;
 
@@ -214,7 +214,7 @@ public class Tokenizer {
                         }
                         List_of_tokens.get(i).setValue("\""+the_string);
                          System.out.println("Syntax Error , missing quotations in line "+List_of_tokens.get(i).getLine_number());
-                         System.exit(0);
+                         //System.exit(0);
 
 //                        List_of_tokens.get(i).setType("Syntax Error in Line " + List_of_tokens.get(i).getLine_number() + " ,missing quotations");
                     } else {
@@ -259,7 +259,7 @@ public class Tokenizer {
                         }
                         List_of_tokens.get(i).setValue("'"+the_string);
                          System.out.println("Syntax Error , missing quotations in line "+List_of_tokens.get(i).getLine_number());
-                         System.exit(0);
+                         //System.exit(0);
                        // List_of_tokens.get(i).setType("Syntax Error in Line " + List_of_tokens.get(i).getLine_number() + " ,missing quotations");
                     } else {
 
@@ -274,7 +274,7 @@ public class Tokenizer {
             if(List_of_tokens.get(i).getType().equals("UNKNOWN"))
             {
                  System.out.println("Unkown identifier in line "+List_of_tokens.get(i).getLine_number());
-                         System.exit(0);
+                         //System.exit(0);
             }
         }
 
