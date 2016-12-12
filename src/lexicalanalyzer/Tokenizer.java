@@ -95,6 +95,20 @@ public class Tokenizer {
                         List_of_tokens.remove(i + 1);
                     }
                     break;
+                case "<":
+                    if ("=".equals(List_of_tokens.get(i + 1).getValue())) {
+                        List_of_tokens.get(i).setValue("<=");
+                        List_of_tokens.get(i).setType("LessThanOrEqual");
+                        List_of_tokens.remove(i + 1);
+                    }
+                    break;
+                case ">":
+                    if ("=".equals(List_of_tokens.get(i + 1).getValue())) {
+                        List_of_tokens.get(i).setValue(">=");
+                        List_of_tokens.get(i).setType("GreaterThanOrEqual");
+                        List_of_tokens.remove(i + 1);
+                    }
+                    break;
 
                 case "-":
                     if ("-".equals(List_of_tokens.get(i + 1).getValue())) {
